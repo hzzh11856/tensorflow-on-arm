@@ -9,6 +9,9 @@ RUN dpkg --add-architecture armhf && dpkg --add-architecture arm64 \
         libpython3-dev:armhf libpython3-all-dev:armhf \
         libpython3-dev:arm64 libpython3-all-dev:arm64
 
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2 100 \
+    && update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
 RUN echo "deb http://httpredir.debian.org/debian/ jessie main contrib non-free" > /etc/apt/sources.list.d/jessie.list \
     && apt-get update && apt-get install -y libpng12-dev \
     && rm -f /etc/apt/sources.list.d/jessie.list \
