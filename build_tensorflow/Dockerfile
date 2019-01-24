@@ -19,7 +19,7 @@ RUN pip3 install -U --user keras_applications==1.0.5 --no-deps \
     && ldconfig
 
 WORKDIR /root
-RUN git clone https://github.com/lhelontra/tensorflow-on-arm/
+RUN git clone https://github.com/hzzh11856/tensorflow-on-arm/
 
 WORKDIR /root/tensorflow-on-arm/build_tensorflow/
 RUN git checkout v1.12.0
